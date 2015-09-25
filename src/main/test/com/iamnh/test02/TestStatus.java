@@ -383,11 +383,35 @@ public class TestStatus {
 		try {
 			session = HibernateUtil.openSession();
 			session.beginTransaction();
-			User u = (User)session.load(User.class, 3);
+			User u = null;
+			u = (User)session.load(User.class, 3);
 			User u2 = new User();
 			u2.setId(3);
 			u2.setPassword("ffff");
 			session.merge(u2);
+			session.getTransaction().commit();   
+		} catch (Exception e) {
+			e.printStackTrace();
+			if (null != session) {
+				session.getTransaction().rollback();
+			}
+		} finally {
+			HibernateUtil.close(session);
+		}
+
+	}
+	
+	@Test
+	public void testDetach07() {
+		Session session = null;
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Long.MAX_VALUE);
+		try {
+			session = HibernateUtil.openSession();
+			session.beginTransaction();
+			User u = (User)session.load(User.class, 3);
+			u.setUsername("aaa2");
+			session.clear(); //session.clear()后持久态变成游离态
 			session.getTransaction().commit();   
 		} catch (Exception e) {
 			e.printStackTrace();
