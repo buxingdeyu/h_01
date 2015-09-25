@@ -93,6 +93,7 @@ public class TestCRUD {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testList(){
 		Session session = null;
