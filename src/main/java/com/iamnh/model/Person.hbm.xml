@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.iamnh.model">
+
+	<class name="Person" table="t_person">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<!-- name表示属性名称，property-ref表示由对端来维护关系 -->
+		<one-to-one name="idCard" property-ref="person"></one-to-one>
+	</class>
+</hibernate-mapping>

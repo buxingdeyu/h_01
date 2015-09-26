@@ -17,6 +17,8 @@
         <mapping resource="com/iamnh/model/Student.hbm.xml"/>
         <mapping resource="com/iamnh/model/Message.hbm.xml"/>
         <mapping resource="com/iamnh/model/Comment.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Person.hbm.xml"/>
+        <mapping resource="com/iamnh/model/IDCard.hbm.xml"/>
     </session-factory>
     
 </hibernate-configuration>
