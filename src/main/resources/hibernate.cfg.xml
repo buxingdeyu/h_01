@@ -21,6 +21,9 @@
         <mapping resource="com/iamnh/model/IDCard.hbm.xml"/>
         <mapping resource="com/iamnh/model/Role.hbm.xml"/>
         <mapping resource="com/iamnh/model/Admin.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Teacher.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Course.hbm.xml"/>
+        <mapping resource="com/iamnh/model/TeacherCourse.hbm.xml"/>
     </session-factory>
     
 </hibernate-configuration>
