@@ -13,6 +13,10 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping resource="com/iamnh/model/Book.hbm.xml"/>
         <mapping resource="com/iamnh/model/User.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Classroom.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Student.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Message.hbm.xml"/>
+        <mapping resource="com/iamnh/model/Comment.hbm.xml"/>
     </session-factory>
     
 </hibernate-configuration>
