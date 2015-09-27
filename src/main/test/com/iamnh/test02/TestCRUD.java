@@ -22,6 +22,7 @@ public class TestCRUD {
 			u.setNickname("步行的鱼1");
 			u.setPassword("1111");
 			u.setUsername("bcc1");
+			u.setCreateDate(new Date());
 			session.save(u);
 			session.getTransaction().commit();
 		}catch(Exception e){

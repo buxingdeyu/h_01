@@ -132,7 +132,7 @@ public class TestMany2One {
 		try{
 			session = HibernateUtil.openSession();
 			session.beginTransaction();
-			Student stu1 = (Student)session.load(Student.class, 1);
+			Student stu1 = (Student)session.load(Student.class, 2);
 			System.out.println(stu1.getName());
 			System.out.println(stu1.getClassroom().getName());//关联对象classroot也是延迟加载的
 			session.getTransaction().commit();
@@ -147,6 +147,25 @@ public class TestMany2One {
 		
 	}
 	
+	@Test
+	public void testLoad2(){
+		Session session = null;
+		try{
+			session = HibernateUtil.openSession();
+			session.beginTransaction();
+			Classroom c = (Classroom)session.load(Classroom.class, 1);
+			System.out.println(c.getStus().size());
+			session.getTransaction().commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			if(null != session){
+				session.getTransaction().rollback();
+			}
+		}finally{
+			HibernateUtil.close(session);
+		}
+		
+	}
 	@Test
 	public void testDeleted(){
 		Session session = null;

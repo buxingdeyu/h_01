@@ -1,5 +1,14 @@
 package com.iamnh.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="t_teacher_course")
 public class TeacherCourse {
 	private int id;
 	
@@ -9,6 +18,8 @@ public class TeacherCourse {
 	
 	private Course course;
 
+	@Id
+	@GeneratedValue
 	public int getId() {
 		return id;
 	}
@@ -25,6 +36,8 @@ public class TeacherCourse {
 		this.ach = ach;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="tid")
 	public Teacher getTeacher() {
 		return teacher;
 	}
@@ -33,6 +46,8 @@ public class TeacherCourse {
 		this.teacher = teacher;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="cid")
 	public Course getCourse() {
 		return course;
 	}

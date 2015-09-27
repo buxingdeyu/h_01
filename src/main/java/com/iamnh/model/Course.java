@@ -2,6 +2,17 @@ package com.iamnh.model;
 
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+@Entity
+@Table(name="t_course")
 public class Course {
 	private int id ;
 	
@@ -9,6 +20,8 @@ public class Course {
 	
 	private Set<TeacherCourse> tcs;
 
+	@Id
+	@GeneratedValue
 	public int getId() {
 		return id;
 	}
@@ -24,7 +37,9 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	@OneToMany(mappedBy="course")
+	@LazyCollection(LazyCollectionOption.EXTRA)
 	public Set<TeacherCourse> getTcs() {
 		return tcs;
 	}

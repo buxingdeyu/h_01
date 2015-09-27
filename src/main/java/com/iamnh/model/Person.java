@@ -1,10 +1,20 @@
 package com.iamnh.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity 
+@Table(name="t_person")
 public class Person {
 	private int id;
 	private String name;
 	private IDCard idCard;
 	
+	@Id
+	@GeneratedValue
 	public int getId() {
 		return id;
 	}
@@ -17,6 +27,9 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	@OneToOne(mappedBy="person")
 	public IDCard getIdCard() {
 		return idCard;
 	}

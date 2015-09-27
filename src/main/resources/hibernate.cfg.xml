@@ -11,19 +11,20 @@
         <property name="hibernate.connection.password">admin</property>
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping resource="com/iamnh/model/Book.hbm.xml"/>
-        <mapping resource="com/iamnh/model/User.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Classroom.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Student.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Message.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Comment.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Person.hbm.xml"/>
-        <mapping resource="com/iamnh/model/IDCard.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Role.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Admin.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Teacher.hbm.xml"/>
-        <mapping resource="com/iamnh/model/Course.hbm.xml"/>
-        <mapping resource="com/iamnh/model/TeacherCourse.hbm.xml"/>
+        <mapping class="com.iamnh.model.User"/>
+        
+        <mapping class="com.iamnh.model.Classroom"/>
+        <mapping class="com.iamnh.model.Student"/>
+        
+        <mapping class="com.iamnh.model.Person"/>
+        <mapping class="com.iamnh.model.IDCard"/>
+        
+        <mapping class="com.iamnh.model.Admin"/>
+        <mapping class="com.iamnh.model.Role"/>
+        
+        <mapping class="com.iamnh.model.Teacher"/>
+        <mapping class="com.iamnh.model.Course"/>
+        <mapping class="com.iamnh.model.TeacherCourse"/>
     </session-factory>
     
 </hibernate-configuration>

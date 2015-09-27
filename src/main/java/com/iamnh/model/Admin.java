@@ -3,6 +3,14 @@ package com.iamnh.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="t_admin")
 public class Admin {
 	private int id;
 	private String name;
@@ -14,6 +22,10 @@ public class Admin {
 		}
 		roles.add(role);
 	}
+	
+	
+	@Id
+	@GeneratedValue
 	public int getId() {
 		return id;
 	}
@@ -26,6 +38,8 @@ public class Admin {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@ManyToMany(mappedBy="admins")
 	public Set<Role> getRoles() {
 		return roles;
 	}
